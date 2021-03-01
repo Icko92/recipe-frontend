@@ -1,0 +1,35 @@
+.header {
+  background-color: #4285f4;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 1.2vw 5vw;
+  .logo {
+    width: 15%;
+    font-weight: bold;
+    font-size: 2vw;
+  }
+  .nav {
+    cursor: pointer;
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.2vw;
+    font-weight: 600;
+    position: relative;
+    .logout {
+      margin-left: 10%;
+    }
+
+    img {
+      width: 10%;
+      border-radius: 50%;
+      position: absolute;
+      top: -30%;
+      padding-left: 1%;
+    }
+  }
+}

@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.scss";
+
+//Components
+import Header from "./components/header/Header";
+import Main from "./components/main/Main";
+import Register from "./components/register/Register";
+import Login from "./components/login/Login";
+import RecipeForm from "./components/recipe-form/RecipeForm";
+//Cookie Provider
+import { CookiesProvider } from "react-cookie";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <CookiesProvider>
+        <div className="app">
+          <Header />
+          <Switch>
+            <Route path="/" exact component={Main} />
+            <Route path="/register" exact component={Register} />
+            <Route path="/login" exact component={Login} />
+            <Route path="/add-recipe" exact component={RecipeForm} />
+          </Switch>
+        </div>
+      </CookiesProvider>
+    </Router>
   );
 }
 
